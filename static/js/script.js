@@ -21,6 +21,7 @@ function addRecordedVideo(recordingId) {
     a.textContent = recordingId;
     a.setAttribute('href', "/video/" + recordingId);
     a.setAttribute('target', '_blank');
+    a.setAttribute('class', 'collection-item');
     newItem.appendChild(a);
     ulist.appendChild(newItem);
   }
@@ -34,7 +35,7 @@ function startRecording () {
         recording = true;
         recordingId = id;
       });
-      
+
     } else {
       room.stopRecording(recordingId);
       document.getElementById("recordButton").innerHTML = "Start Recording";
@@ -85,7 +86,7 @@ window.onload = function () {
             stream.addEventListener("bandwidth-alert", function (evt){
                 console.log("Bandwidth Alert", evt.msg, evt.bandwidth);
             });
-            
+
 
           }
         }
@@ -103,7 +104,7 @@ window.onload = function () {
         div.setAttribute("style", "width: 640px; height: 480px;");
         div.setAttribute("id", "test" + stream.getID());
 
-        document.body.insertBefore(div, document.getElementById("recorded"));
+        document.body.insertBefore(div, document.getElementById("myVideo").nextSibiling);
         stream.show("test" + stream.getID());
 
       });
@@ -123,7 +124,7 @@ window.onload = function () {
           document.body.removeChild(element);
         }
       });
-      
+
       room.addEventListener("stream-failed", function (streamEvent){
           console.log("STREAM FAILED, DISCONNECTION");
           room.disconnect();

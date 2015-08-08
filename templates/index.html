@@ -1,18 +1,57 @@
 <html>
   <head>
-    <title>Licode Basic Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WebRTC Licode Demo</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="/static/js/erizo.js"></script>
     <script type="text/javascript" src="/static/js/script.js"></script>
   </head>
 
   <body>
-    <button id="recordButton" onclick="startRecording()" disabled>Start Recording</button>
-    <button id="testConnection" onclick="testConnection()">Test Connection</button>
-    <div id="myVideo" style="width:640px; height: 480px;">
-    </div>
-    <div id="recorded">
-      <h2>Recorded Videos</h2>
-      <ul id="recordedVideos"></ul>
-    </div>
+    <header>
+      <nav>
+         <div class="nav-wrapper">
+           <a href="#" class="brand-logo">
+            <i class="material-icons" style="display: inline-block; padding: 0 10px">theaters</i>
+            <span>WebRTC LiCode Recording Demo</span>
+           </a>
+         </div>
+       </nav>
+      <header>
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col s12">
+            <div class="card-panel">
+              <div id="myVideo" style="width:640px; height: 480px;"></div>
+              <button class="btn" id="recordButton" onclick="startRecording()" disabled>
+                <i class="material-icons left">videocam</i>
+                Start Recording
+              </button>
+              <button class="btn" id="testConnection" onclick="testConnection()">
+                <i class="material-icons left">settings_input_component</i>
+                Test Connection
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12">
+            <div class="card-panel">
+              <h4>Recorded Videos</h4>
+              <ul id="recordedVideos">
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
   </body>
 </html>
