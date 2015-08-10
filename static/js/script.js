@@ -104,7 +104,9 @@ window.onload = function () {
         div.setAttribute("style", "width: 640px; height: 480px;");
         div.setAttribute("id", "test" + stream.getID());
 
-        document.body.insertBefore(div, document.getElementById("myVideo").nextSibiling);
+        var myVideo = document.getElementById("myVideo");
+        myVideo.parentNode.insertBefore(div, myVideo.nextSibling);
+
         stream.show("test" + stream.getID());
 
       });
